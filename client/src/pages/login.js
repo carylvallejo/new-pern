@@ -27,7 +27,7 @@ const Login = () => {
     } catch (error) {
       console.log(error.response.data.errors[0].msg)
       setError(error.response.data.errors[0].msg)
-    }
+    } 
   }
 
   return (
@@ -75,6 +75,6 @@ const Login = () => {
       </form>
     </Layout>
   )
-}
+} 
 
 export default Login

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { onRegistration } from '../api/auth'
 import Layout from '../components/layout'
 
+
 const Register = () => {
   const [values, setValues] = useState({
     email: '',
@@ -14,8 +15,9 @@ const Register = () => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
 
+ 
   const onSubmit = async (e) => {
-    e.preventDefault()
+   e.preventDefault()
 
     try {
       const { data } = await onRegistration(values)
@@ -26,8 +28,8 @@ const Register = () => {
     } catch (error) {
       setError(error.response.data.errors[0].msg)
       setSuccess('')
-    }
-  }
+    } 
+  } 
 
   return (
     <Layout>
@@ -61,11 +63,11 @@ const Register = () => {
             className='form-control'
             id='password'
             name='password'
-            placeholder='passwod'
+            placeholder='password'
             required
           />
         </div>
-
+        
         <div style={{ color: 'red', margin: '10px 0' }}>{error}</div>
         <div style={{ color: 'green', margin: '10px 0' }}>{success}</div>
 
@@ -73,7 +75,7 @@ const Register = () => {
           Submit
         </button>
       </form>
-    </Layout>
+    </Layout> 
   )
 }
 
